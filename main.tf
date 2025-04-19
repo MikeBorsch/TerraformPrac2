@@ -80,7 +80,7 @@ resource "aws_security_group" "nginx_sg" {
     subnet_id = aws_subnet.public.id
     vpc_security_group_ids = [aws_security_group.nginx_sg.id]
     associate_public_ip_address = true
-    key_name = "NGNIXPair"
+    key_name = "NGINXPair"
     user_data = <<-EOF
                 #!/bin/bash
                 yum update -y
