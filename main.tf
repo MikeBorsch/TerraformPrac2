@@ -36,7 +36,7 @@ resource "aws_internet_gateway" "igw" {
     resource "aws_route_table" "public_rt" {
         vpc_id = aws_vpc.main.id
         route {
-            cidr_block = "0.0.0/0"
+            cidr_block = "0.0.0.0/0"
             gateway_id = aws_internet_gateway.igw.id
     }
 }
@@ -75,7 +75,7 @@ resource "aws_security_group" "nginx_sg" {
    }
 }
    resource "aws_instance" "nginx" {
-    ami = "ami-0C101f26F147Fa7fd"
+    ami = "ami=03449927258d45bc4"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.public.id
     vpc_security_group_ids = [aws_security_group.nginx_sg.id]
